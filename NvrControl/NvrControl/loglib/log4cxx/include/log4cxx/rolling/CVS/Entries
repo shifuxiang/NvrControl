@@ -1,0 +1,16 @@
+/action.h/1.1/Mon May  9 04:18:49 2016//
+/filerenameaction.h/1.1/Mon May  9 04:18:49 2016//
+/filterbasedtriggeringpolicy.h/1.1/Mon May  9 04:18:49 2016//
+/fixedwindowrollingpolicy.h/1.1/Mon May  9 04:18:49 2016//
+/gzcompressaction.h/1.1/Mon May  9 04:18:49 2016//
+/manualtriggeringpolicy.h/1.1/Mon May  9 04:18:49 2016//
+/rollingfileappender.h/1.1/Mon May  9 04:18:49 2016//
+/rollingfileappenderskeleton.h/1.1/Mon May  9 04:18:49 2016//
+/rollingpolicy.h/1.1/Mon May  9 04:18:49 2016//
+/rollingpolicybase.h/1.1/Mon May  9 04:18:49 2016//
+/rolloverdescription.h/1.1/Mon May  9 04:18:50 2016//
+/sizebasedtriggeringpolicy.h/1.1/Mon May  9 04:18:50 2016//
+/timebasedrollingpolicy.h/1.1/Mon May  9 04:18:50 2016//
+/triggeringpolicy.h/1.1/Mon May  9 04:18:50 2016//
+/zipcompressaction.h/1.1/Mon May  9 04:18:50 2016//
+D

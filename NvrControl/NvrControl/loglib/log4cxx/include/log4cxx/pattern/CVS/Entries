@@ -1,0 +1,25 @@
+/classnamepatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/datepatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/filedatepatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/filelocationpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/formattinginfo.h/1.1/Mon May  9 04:18:49 2016//
+/fulllocationpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/integerpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/levelpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/linelocationpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/lineseparatorpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/literalpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/loggerpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/loggingeventpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/messagepatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/methodlocationpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/nameabbreviator.h/1.1/Mon May  9 04:18:49 2016//
+/namepatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/ndcpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/patternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/patternparser.h/1.1/Mon May  9 04:18:49 2016//
+/propertiespatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/relativetimepatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/threadpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+/throwableinformationpatternconverter.h/1.1/Mon May  9 04:18:49 2016//
+D

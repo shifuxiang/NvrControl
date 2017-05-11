@@ -1,0 +1,5 @@
+/apr_rules.mk////*///
+/libtool////*///
+/make_exports.awk////*///
+/make_var_export.awk////*///
+/mkdir.sh////*///

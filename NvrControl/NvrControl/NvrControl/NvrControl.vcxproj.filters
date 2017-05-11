@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="database">
+      <UniqueIdentifier>{47679d0a-4c53-4cef-8fc1-6983d4ee49d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="threadManage">
+      <UniqueIdentifier>{e617f8f4-648a-488a-81d8-bf797764abd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="timeTask">
+      <UniqueIdentifier>{0eb401e3-1278-4370-b835-09c66cb894d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="webservice">
+      <UniqueIdentifier>{c360a3e7-14bd-45d1-a215-d82e21b03650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="contentcheck">
+      <UniqueIdentifier>{1ecfc707-2e77-420a-a077-91f7a55121cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="log">
+      <UniqueIdentifier>{097bc080-b5af-41c0-b2c0-a4dd1a9c8aa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="para">
+      <UniqueIdentifier>{d60be626-6fa4-4c4a-9fd1-194649584ca6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{55b51b26-752b-4b4e-95b4-5897ddd48ccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jobs">
+      <UniqueIdentifier>{bd05b627-99ec-4258-9fc8-f8bd9e09ee04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server">
+      <UniqueIdentifier>{3be31bd3-c933-452e-9a22-78b2931bb69f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="downloadControl">
+      <UniqueIdentifier>{c74dcc51-6e84-4e1f-9b9f-9671ec872c35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileManager">
+      <UniqueIdentifier>{0f731715-ede9-4756-bf84-0bfb96f20c1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nvr">
+      <UniqueIdentifier>{3e335153-7060-4be4-9854-8a7af16b2352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ipcControl">
+      <UniqueIdentifier>{60b54f2a-064b-4ff0-a145-185f94e532a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="timeControl">
+      <UniqueIdentifier>{7efbe7a7-e5a0-4de0-b923-2d8d0ffc7870}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="myLog">
+      <UniqueIdentifier>{1e87ca22-63ef-4f69-8a62-8a7a41bbc49e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\database\CppMySQL3DB.cpp">
+      <Filter>database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\database\CppMySQLQuery.cpp">
+      <Filter>database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\threadManage\C_ThreadManage.cpp">
+      <Filter>threadManage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\timeTask\C_Task.cpp">
+      <Filter>timeTask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\timeTask\C_TaskList.cpp">
+      <Filter>timeTask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\webservice\C_SoapFunction.cpp">
+      <Filter>webservice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\webservice\C_SoapServer.cpp">
+      <Filter>webservice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\webservice\stdsoap2.cpp">
+      <Filter>webservice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\base64.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\C_Satellite.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\C_SatXmlParser.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\content.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\crc32.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\DcpInfo.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\FtpClient.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\fun.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\HashInfo.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\md5.c">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\PKLInfo.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\contentcheck\sha1.cpp">
+      <Filter>contentcheck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\log\C_AdditionalLog.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\log\C_LogManage.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\log\LogManage.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\para\C_Para.cpp">
+      <Filter>para</Filter>
+    </ClCompile>
+    <ClCompile Include="..\para\C_RunPara.cpp">
+      <Filter>para</Filter>
+    </ClCompile>
+    <ClCompile Include="..\para\ec_config.cpp">
+      <Filter>para</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utility\C_HttpParser.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utility\C_LocalTime.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utility\C_TcpSocket.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utility\C_TcpTransport.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utility\C_Time.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\C_Hall.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\C_HallList.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\check_netcard.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\CheckDisk.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\DataManager.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\Dispatch.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\FileOperator.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\HashCheck.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\Invoke.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\MonitorSensor.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jobs\TMSSensor.cpp">
+      <Filter>jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\C_FileCopyProtocolServer.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\C_FileCopyProtSerProxy.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\C_FileOperationsTool.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\C_Log.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\C_RecvDataObserverImp.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\C_TcpServer.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\C_WriteDataThread.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\downloadControl\DownloadControl.cpp">
+      <Filter>downloadControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FileManager\FileManager_linux.cpp">
+      <Filter>FileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nvr\Nvr_Control.cpp">
+      <Filter>Nvr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ipcControl\ipcControl.cpp">
+      <Filter>ipcControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\database\pub.cpp">
+      <Filter>database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ipcControl\ipcControl_Table.cpp">
+      <Filter>ipcControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\downloadControl\Download_Table.cpp">
+      <Filter>downloadControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\timeControl\DM_TimeControl.cpp">
+      <Filter>timeControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\myLog\MyLogger.cpp">
+      <Filter>myLog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nvr\INvrControl.cpp">
+      <Filter>Nvr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nvr\CNvrControl.cpp">
+      <Filter>Nvr</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\database\CppMySQL3DB.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\database\CppMySQLQuery.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\threadManage\C_CS.h">
+      <Filter>threadManage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\threadManage\C_ThreadData.h">
+      <Filter>threadManage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\threadManage\C_ThreadManage.h">
+      <Filter>threadManage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\timeTask\C_Task.h">
+      <Filter>timeTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\timeTask\C_TaskList.h">
+      <Filter>timeTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\webservice\C_SoapServer.h">
+      <Filter>webservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\webservice\stdsoap2.h">
+      <Filter>webservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\webservice\webservice.h">
+      <Filter>webservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\base64.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\C_Satellite.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\C_SatXmlParser.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\content.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\crc32.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\DcpInfo.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\errdef.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\FtpClient.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\fun.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\HashInfo.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\md5.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\PKLInfo.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\sha1.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\contentcheck\socket_err.h">
+      <Filter>contentcheck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\log\C_AdditionalLog.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\log\C_LogManage.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\log\LogManage.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\para\C_Para.h">
+      <Filter>para</Filter>
+    </ClInclude>
+    <ClInclude Include="..\para\C_RunPara.h">
+      <Filter>para</Filter>
+    </ClInclude>
+    <ClInclude Include="..\para\ec_config.h">
+      <Filter>para</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utility\C_HttpParser.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utility\C_LocalTime.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utility\C_TcpSocket.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utility\C_TcpTransport.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utility\C_Time.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utility\IPMgr.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\C_Hall.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\C_HallList.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\check_netcard.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\CheckDisk.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\DataManager.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\Dispatch.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\FileOperator.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\HashCheck.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\Invoke.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\MonitorSensor.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\TMSSensor.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jobs\watchdog.h">
+      <Filter>jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\C_FileCopyProtocolServer.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\C_FileCopyProtSerProxy.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\C_FileOperationsTool.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\C_ITcpSserver.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\C_Log.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\C_RecvDataObserverImp.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\C_TcpServer.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\C_WriteDataThread.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\CircularQueue.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\ConstDef.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\C_constDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\C_ErrorDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dhconfigsdk.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dhnetsdk.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\downloadControl\DownloadControl.h">
+      <Filter>downloadControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FileManager\FileManager_linux.h">
+      <Filter>FileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nvr\Nvr_Control.h">
+      <Filter>Nvr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ipcControl\ipcControl.h">
+      <Filter>ipcControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\database\pub.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ipcControl\ipcControl_Table.h">
+      <Filter>ipcControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ipcControl\ipcControl_Struct.h">
+      <Filter>ipcControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\downloadControl\Download_Table.h">
+      <Filter>downloadControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\downloadControl\DownloadControl_Struct.h">
+      <Filter>downloadControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\timeControl\DM_TimeControl.h">
+      <Filter>timeControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\myLog\MyLogger.h">
+      <Filter>myLog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nvr\INvrControl.h">
+      <Filter>Nvr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nvr\CNvrControl.h">
+      <Filter>Nvr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nvr_Types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nvr_Ret.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Nvrlog.conf">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

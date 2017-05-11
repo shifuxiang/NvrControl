@@ -1,0 +1,15 @@
+/action.h////*///
+/filerenameaction.h////*///
+/filterbasedtriggeringpolicy.h////*///
+/fixedwindowrollingpolicy.h////*///
+/gzcompressaction.h////*///
+/manualtriggeringpolicy.h////*///
+/rollingfileappender.h////*///
+/rollingfileappenderskeleton.h////*///
+/rollingpolicy.h////*///
+/rollingpolicybase.h////*///
+/rolloverdescription.h////*///
+/sizebasedtriggeringpolicy.h////*///
+/timebasedrollingpolicy.h////*///
+/triggeringpolicy.h////*///
+/zipcompressaction.h////*///

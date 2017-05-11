@@ -1,0 +1,7 @@
+/smtpappender.h////*///
+/socketappender.h////*///
+/socketappenderskeleton.h////*///
+/sockethubappender.h////*///
+/syslogappender.h////*///
+/telnetappender.h////*///
+/xmlsocketappender.h////*///

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="Service"
+ targetNamespace="http://tempuri.org/mons.xsd/Service.wsdl"
+ xmlns:tns="http://tempuri.org/mons.xsd/Service.wsdl"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:mons="http://tempuri.org/mons.xsd"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:HTTP="http://schemas.xmlsoap.org/wsdl/http/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="http://tempuri.org/mons.xsd"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:mons="http://tempuri.org/mons.xsd"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <complexType name="DownloadTime"><!-- mons__DownloadTime -->
+
+   <sequence>
+     <element name="dwYear" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__DownloadTime::dwYear -->
+     <element name="dwMonth" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__DownloadTime::dwMonth -->
+     <element name="dwDay" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__DownloadTime::dwDay -->
+     <element name="dwHour" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__DownloadTime::dwHour -->
+     <element name="dwMinute" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__DownloadTime::dwMinute -->
+     <element name="dwSecond" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__DownloadTime::dwSecond -->
+   </sequence>
+  </complexType>
+  <complexType name="IPCINFO"><!-- mons__IPCINFO -->
+
+   <sequence>
+     <element name="HallNo" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__IPCINFO::HallNo -->
+     <element name="ipcPo" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__IPCINFO::ipcPo -->
+     <element name="channelID" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__IPCINFO::channelID -->
+   </sequence>
+  </complexType>
+  <complexType name="SetSystemtimeInfo"><!-- mons__SetSystemtimeInfo -->
+
+   <sequence>
+     <element name="unYear" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__SetSystemtimeInfo::unYear -->
+     <element name="unMonth" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__SetSystemtimeInfo::unMonth -->
+     <element name="unDay" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__SetSystemtimeInfo::unDay -->
+     <element name="unHour" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__SetSystemtimeInfo::unHour -->
+     <element name="unMinute" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__SetSystemtimeInfo::unMinute -->
+     <element name="unSecond" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__SetSystemtimeInfo::unSecond -->
+   </sequence>
+  </complexType>
+  <complexType name="GetIpcVedioQualityInfo"><!-- mons__GetIpcVedioQualityInfo -->
+
+   <sequence>
+     <element name="ResoluRatio" type="xsd:string" minOccurs="1" maxOccurs="1"/><!-- mons__GetIpcVedioQualityInfo::ResoluRatio -->
+     <element name="frame" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__GetIpcVedioQualityInfo::frame -->
+     <element name="CodeMode" type="xsd:string" minOccurs="1" maxOccurs="1"/><!-- mons__GetIpcVedioQualityInfo::CodeMode -->
+     <element name="stream" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__GetIpcVedioQualityInfo::stream -->
+   </sequence>
+  </complexType>
+  <complexType name="SetIpcVedioQualityInfo"><!-- mons__SetIpcVedioQualityInfo -->
+
+   <sequence>
+     <element name="ResoluRatio" type="xsd:string" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcVedioQualityInfo::ResoluRatio -->
+     <element name="frame" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcVedioQualityInfo::frame -->
+     <element name="CodeMode" type="xsd:string" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcVedioQualityInfo::CodeMode -->
+     <element name="stream" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcVedioQualityInfo::stream -->
+   </sequence>
+  </complexType>
+  <!-- operation request element -->
+  <element name="GetoneInfos">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="get1">
+   <complexType>
+    <sequence>
+     <element name="i" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__get1::i -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="SetDlSpeed">
+   <complexType>
+    <sequence>
+     <element name="isOK" type="xsd:boolean" minOccurs="1" maxOccurs="1"/><!-- mons__SetDlSpeed::isOK -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="SetDLSpeedResponse">
+   <complexType>
+    <sequence>
+     <element name="isTrue" type="xsd:boolean" minOccurs="1" maxOccurs="1"/><!-- mons__SetDLSpeedResponse::isTrue -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="DownLoadByTime">
+   <complexType>
+    <sequence>
+     <element name="id" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__DownLoadByTime::id -->
+     <element name="nAudiNU" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__DownLoadByTime::nAudiNU -->
+     <element name="nDevicePo" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__DownLoadByTime::nDevicePo -->
+     <element name="tmStart" type="mons:DownloadTime" minOccurs="1" maxOccurs="1"/><!-- mons__DownLoadByTime::tmStart -->
+     <element name="tmEnd" type="mons:DownloadTime" minOccurs="1" maxOccurs="1"/><!-- mons__DownLoadByTime::tmEnd -->
+     <element name="storePath" type="xsd:string" minOccurs="1" maxOccurs="1"/><!-- mons__DownLoadByTime::storePath -->
+     <element name="mp4name" type="xsd:string" minOccurs="1" maxOccurs="1"/><!-- mons__DownLoadByTime::mp4name -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="DownloadTimeResponse">
+   <complexType>
+    <sequence>
+     <element name="id" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__DownloadTimeResponse::id -->
+     <element name="fileNameMp4" type="xsd:string" minOccurs="1" maxOccurs="1"/><!-- mons__DownloadTimeResponse::fileNameMp4 -->
+     <element name="isOK" type="xsd:boolean" minOccurs="1" maxOccurs="1"/><!-- mons__DownloadTimeResponse::isOK -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="SetIpcInfo">
+   <complexType>
+    <sequence>
+     <element name="HallNo" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcInfo::HallNo -->
+     <element name="ipcPo" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcInfo::ipcPo -->
+     <element name="channelID" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcInfo::channelID -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="SetIpcInfoRes">
+   <complexType>
+    <sequence>
+     <element name="isOK" type="xsd:boolean" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcInfoRes::isOK -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="GetSystemTimeInfo">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="GetSystemTimeRes">
+   <complexType>
+    <sequence>
+     <element name="unYear" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__GetSystemTimeRes::unYear -->
+     <element name="unMonth" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__GetSystemTimeRes::unMonth -->
+     <element name="unDay" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__GetSystemTimeRes::unDay -->
+     <element name="unHour" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__GetSystemTimeRes::unHour -->
+     <element name="unMinute" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__GetSystemTimeRes::unMinute -->
+     <element name="unSecond" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1"/><!-- mons__GetSystemTimeRes::unSecond -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="SetSystemTime">
+   <complexType>
+    <sequence>
+     <element name="timeInfos" type="mons:SetSystemtimeInfo" minOccurs="1" maxOccurs="1"/><!-- mons__SetSystemTime::timeInfos -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="SetSystemInfoRes">
+   <complexType>
+    <sequence>
+     <element name="isOK" type="xsd:boolean" minOccurs="1" maxOccurs="1"/><!-- mons__SetSystemInfoRes::isOK -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="DInit">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="InitRes">
+   <complexType>
+    <sequence>
+     <element name="isOK" type="xsd:boolean" minOccurs="1" maxOccurs="1"/><!-- mons__InitRes::isOK -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="DRelease">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="ReleaseRes">
+   <complexType>
+    <sequence>
+     <element name="isOK" type="xsd:boolean" minOccurs="1" maxOccurs="1"/><!-- mons__ReleaseRes::isOK -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="GetIpcResoluRatio">
+   <complexType>
+    <sequence>
+     <element name="nAudiNU" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__GetIpcResoluRatio::nAudiNU -->
+     <element name="nDevicePo" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__GetIpcResoluRatio::nDevicePo -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="GetIpcResoluRatioInfo">
+   <complexType>
+    <sequence>
+     <element name="ResoluRatios" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/><!-- mons__GetIpcResoluRatioInfo::ResoluRatios -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="GetIpcVedioQuality">
+   <complexType>
+    <sequence>
+     <element name="nAudiNU" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__GetIpcVedioQuality::nAudiNU -->
+     <element name="nDevicePo" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__GetIpcVedioQuality::nDevicePo -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="GetIpcVedioQualityInfoRes">
+   <complexType>
+    <sequence>
+     <element name="vedioQuality" type="mons:GetIpcVedioQualityInfo" minOccurs="1" maxOccurs="1"/><!-- mons__GetIpcVedioQualityInfoRes::vedioQuality -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="SetIpcVedioQuality">
+   <complexType>
+    <sequence>
+     <element name="nAudiNU" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcVedioQuality::nAudiNU -->
+     <element name="nDevicePo" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcVedioQuality::nDevicePo -->
+     <element name="vedioInfo" type="mons:SetIpcVedioQualityInfo" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcVedioQuality::vedioInfo -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="SetIpcVedioQualityInfoRes">
+   <complexType>
+    <sequence>
+     <element name="isOK" type="xsd:boolean" minOccurs="1" maxOccurs="1"/><!-- mons__SetIpcVedioQualityInfoRes::isOK -->
+    </sequence>
+   </complexType>
+  </element>
+ </schema>
+
+</types>
+
+<message name="GetoneInfos">
+ <part name="Body" element="mons:GetoneInfos"/><!-- mons__GetoneInfos::mons__GetoneInfos -->
+</message>
+
+<message name="get1">
+ <part name="Body" element="mons:get1"/><!-- mons__GetoneInfos::ret -->
+</message>
+
+<message name="SetDlSpeed">
+ <part name="Body" element="mons:SetDlSpeed"/><!-- mons__SetDlSpeed::mons__SetDlSpeed -->
+</message>
+
+<message name="SetDLSpeedResponse">
+ <part name="Body" element="mons:SetDLSpeedResponse"/><!-- mons__SetDlSpeed::ret -->
+</message>
+
+<message name="DownLoadByTime">
+ <part name="Body" element="mons:DownLoadByTime"/><!-- mons__DownLoadByTime::mons__DownLoadByTime -->
+</message>
+
+<message name="DownloadTimeResponse">
+ <part name="Body" element="mons:DownloadTimeResponse"/><!-- mons__DownLoadByTime::ret -->
+</message>
+
+<message name="SetIpcInfo">
+ <part name="Body" element="mons:SetIpcInfo"/><!-- mons__SetIpcInfo::mons__SetIpcInfo -->
+</message>
+
+<message name="SetIpcInfoRes">
+ <part name="Body" element="mons:SetIpcInfoRes"/><!-- mons__SetIpcInfo::ret -->
+</message>
+
+<message name="GetSystemTimeInfo">
+ <part name="Body" element="mons:GetSystemTimeInfo"/><!-- mons__GetSystemTimeInfo::mons__GetSystemTimeInfo -->
+</message>
+
+<message name="GetSystemTimeRes">
+ <part name="Body" element="mons:GetSystemTimeRes"/><!-- mons__GetSystemTimeInfo::ret -->
+</message>
+
+<message name="SetSystemTime">
+ <part name="Body" element="mons:SetSystemTime"/><!-- mons__SetSystemTime::mons__SetSystemTime -->
+</message>
+
+<message name="SetSystemInfoRes">
+ <part name="Body" element="mons:SetSystemInfoRes"/><!-- mons__SetSystemTime::ret -->
+</message>
+
+<message name="DInit">
+ <part name="Body" element="mons:DInit"/><!-- mons__DInit::mons__DInit -->
+</message>
+
+<message name="InitRes">
+ <part name="Body" element="mons:InitRes"/><!-- mons__DInit::ret -->
+</message>
+
+<message name="DRelease">
+ <part name="Body" element="mons:DRelease"/><!-- mons__DRelease::mons__DRelease -->
+</message>
+
+<message name="ReleaseRes">
+ <part name="Body" element="mons:ReleaseRes"/><!-- mons__DRelease::ret -->
+</message>
+
+<message name="GetIpcResoluRatio">
+ <part name="Body" element="mons:GetIpcResoluRatio"/><!-- mons__GetIpcResoluRatio::mons__GetIpcResoluRatio -->
+</message>
+
+<message name="GetIpcResoluRatioInfo">
+ <part name="Body" element="mons:GetIpcResoluRatioInfo"/><!-- mons__GetIpcResoluRatio::ret -->
+</message>
+
+<message name="GetIpcVedioQuality">
+ <part name="Body" element="mons:GetIpcVedioQuality"/><!-- mons__GetIpcVedioQuality::mons__GetIpcVedioQuality -->
+</message>
+
+<message name="GetIpcVedioQualityInfoRes">
+ <part name="Body" element="mons:GetIpcVedioQualityInfoRes"/><!-- mons__GetIpcVedioQuality::ret -->
+</message>
+
+<message name="SetIpcVedioQuality">
+ <part name="Body" element="mons:SetIpcVedioQuality"/><!-- mons__SetIpcVedioQuality::mons__SetIpcVedioQuality -->
+</message>
+
+<message name="SetIpcVedioQualityInfoRes">
+ <part name="Body" element="mons:SetIpcVedioQualityInfoRes"/><!-- mons__SetIpcVedioQuality::ret -->
+</message>
+
+<portType name="ServicePortType">
+ <operation name="GetoneInfos">
+  <documentation>Service definition of function mons__GetoneInfos</documentation>
+  <input message="tns:GetoneInfos"/>
+  <output message="tns:get1"/>
+ </operation>
+ <operation name="SetDlSpeed">
+  <documentation>Service definition of function mons__SetDlSpeed</documentation>
+  <input message="tns:SetDlSpeed"/>
+  <output message="tns:SetDLSpeedResponse"/>
+ </operation>
+ <operation name="DownLoadByTime">
+  <documentation>Service definition of function mons__DownLoadByTime</documentation>
+  <input message="tns:DownLoadByTime"/>
+  <output message="tns:DownloadTimeResponse"/>
+ </operation>
+ <operation name="SetIpcInfo">
+  <documentation>Service definition of function mons__SetIpcInfo</documentation>
+  <input message="tns:SetIpcInfo"/>
+  <output message="tns:SetIpcInfoRes"/>
+ </operation>
+ <operation name="GetSystemTimeInfo">
+  <documentation>Service definition of function mons__GetSystemTimeInfo</documentation>
+  <input message="tns:GetSystemTimeInfo"/>
+  <output message="tns:GetSystemTimeRes"/>
+ </operation>
+ <operation name="SetSystemTime">
+  <documentation>Service definition of function mons__SetSystemTime</documentation>
+  <input message="tns:SetSystemTime"/>
+  <output message="tns:SetSystemInfoRes"/>
+ </operation>
+ <operation name="DInit">
+  <documentation>Service definition of function mons__DInit</documentation>
+  <input message="tns:DInit"/>
+  <output message="tns:InitRes"/>
+ </operation>
+ <operation name="DRelease">
+  <documentation>Service definition of function mons__DRelease</documentation>
+  <input message="tns:DRelease"/>
+  <output message="tns:ReleaseRes"/>
+ </operation>
+ <operation name="GetIpcResoluRatio">
+  <documentation>Service definition of function mons__GetIpcResoluRatio</documentation>
+  <input message="tns:GetIpcResoluRatio"/>
+  <output message="tns:GetIpcResoluRatioInfo"/>
+ </operation>
+ <operation name="GetIpcVedioQuality">
+  <documentation>Service definition of function mons__GetIpcVedioQuality</documentation>
+  <input message="tns:GetIpcVedioQuality"/>
+  <output message="tns:GetIpcVedioQualityInfoRes"/>
+ </operation>
+ <operation name="SetIpcVedioQuality">
+  <documentation>Service definition of function mons__SetIpcVedioQuality</documentation>
+  <input message="tns:SetIpcVedioQuality"/>
+  <output message="tns:SetIpcVedioQualityInfoRes"/>
+ </operation>
+</portType>
+
+<binding name="Service" type="tns:ServicePortType">
+ <SOAP:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="GetoneInfos">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+ <operation name="SetDlSpeed">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+ <operation name="DownLoadByTime">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+ <operation name="SetIpcInfo">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+ <operation name="GetSystemTimeInfo">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+ <operation name="SetSystemTime">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+ <operation name="DInit">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+ <operation name="DRelease">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+ <operation name="GetIpcResoluRatio">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+ <operation name="GetIpcVedioQuality">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+ <operation name="SetIpcVedioQuality">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="Body" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="Body" use="literal"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="Service">
+ <documentation>gSOAP 2.8.18 generated service definition</documentation>
+ <port name="Service" binding="tns:Service">
+  <SOAP:address location="http://localhost:80"/>
+ </port>
+</service>
+
+</definitions>
