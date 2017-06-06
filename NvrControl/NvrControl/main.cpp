@@ -73,6 +73,11 @@ void * covert(LPVOID pvoid)
 {
 	g_Download.DM_Convert();
 }
+
+void * setState(LPVOID pvoid)
+{
+	g_Download.DM_SetState();
+}
 int main(int argc,char ** argv)
 {
 	int nRet = 0;
@@ -181,6 +186,8 @@ int main(int argc,char ** argv)
 	//g_timeControl.SetNvtServer(true,"127.0.0.1",123,10);
 #if 1
 	pthread_t covertThread;
+	//add by sfx modify if  net is disconnect set download state to failed 2017.6.6
+	pthread_t setStateThread;
 	pthread_attr_t attr;
 	if(pthread_attr_init(&attr) != 0)
 	{
@@ -190,7 +197,12 @@ int main(int argc,char ** argv)
 	{
 		std::cout<<"create thread error! "<<std::endl;
 	}
+	if(pthread_create(&setStateThread,&attr,setState,NULL))
+	{
+		std::cout <<"create set state thread error!"<<std::endl;
+	}
 	pthread_join(covertThread,NULL);
+	pthread_join(setStateThread,NULL);
 #endif
 	while(true)
 	{

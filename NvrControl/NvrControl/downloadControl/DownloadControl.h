@@ -91,6 +91,16 @@ public:
 	\****************************************************/
 	int DM_GetDownloadInfoBySql(string sql,DOWNLOAD_INFO *pDownloadInfo);
 
+
+	/***************************************************\
+	函数功能：检查和Nvr连接状态，当连接状态为否时。置
+			当前正在下载的任务为failed
+	参数：无
+	返回值：成功返回0，失败返回其他值。
+	add by sfx modify if  net is disconnect set download state to failed 2017.6.6
+	\***************************************************/
+	int DM_SetState();
+
 	int DM_GetErrorString();
 public:
 	int NewSpaceDeviceDownloadInfo(DOWNLOAD_INFO **pDownloadInfo);

@@ -78,7 +78,7 @@ int downLoad::DM_SetNvrDownloadSpeed(int id,bool isOK)
 	{
 		char buff_temp[255] = {'\0'};
 		memset(buff_temp, 0, sizeof(buff_temp));
-		sprintf(buff_temp, "download module,ping nvr ip is failed ,this ip can not using!\n");
+		sprintf(buff_temp, "download module,when set download speed ,ping nvr ip is failed ,this ip can not using!\n");
 		g_Download_logwrite.PrintLog(MyLogger::INFO,"%s",buff_temp);
 		nRet = URL_NVRIPCANNOTPING_ERROR;
 		return nRet;
@@ -89,6 +89,14 @@ int downLoad::DM_SetNvrDownloadSpeed(int id,bool isOK)
 		string username = g_NvrUserName;
 		string password = g_NvrPassword;
 		nRet = g_nvrcontrol.DM_Login(ip,atoi(g_NvrPort),username,password);
+		if(nRet != 0)
+		{
+			char buff_temp[255] = {'\0'};
+			memset(buff_temp, 0, sizeof(buff_temp));
+			sprintf(buff_temp, "download module,when set download speed ,login Nvr failed!\n");
+			g_Download_logwrite.PrintLog(MyLogger::INFO,"%s",buff_temp);
+			return nRet;
+		}
 	}
 	cout << nvrcontrol.m_lLoginHandle <<endl;
 	#endif
@@ -101,7 +109,7 @@ int downLoad::DM_SetNvrDownloadSpeed(int id,bool isOK)
 	{
 		char buff_temp[255] = {'\0'};
 		memset(buff_temp, 0, sizeof(buff_temp));
-		sprintf(buff_temp, "download module,set nvr download speed is failed!\n");
+		sprintf(buff_temp, "download module,when call interface CLIENT_SetDevConfig() set nvr download speed is failed!\n");
 		g_Download_logwrite.PrintLog(MyLogger::INFO,"%s",buff_temp);
 		nRet = URL_DOWNLOADCONTROL_SETDOWNLOADSPEED_ERROR;
 		g_nvrcontrol.DM_Logout(g_nvrcontrol.m_lLoginHandle);
@@ -173,7 +181,7 @@ bool startConvert(string mp4FileName)
 		//emit startConvertFailed();	
 		char buff_temp[255] = {'\0'};
 		memset(buff_temp, 0, sizeof(buff_temp));
-		sprintf(buff_temp, "download module,convert to avi failed!\n");
+		sprintf(buff_temp, "download module,convert to avi failed,the mp4 name is :%s!\n",mp4FileName.c_str());
 		g_Download_logwrite.PrintLog(MyLogger::INFO,"%s",buff_temp);
 		m_isConverting = false;
 		PLAY_Stop(PORT);
@@ -208,7 +216,7 @@ void CALLBACK DownLoadPos(LLONG lPlayHandle, DWORD dwTotalSize, DWORD dwDownLoad
 		TimeDownLoadCallBack(lPlayHandle,dwTotalSize,dwDownLoadSize,dwUser);
 		char buff_temp[255] = {'\0'};
 		memset(buff_temp, 0, sizeof(buff_temp));
-		sprintf(buff_temp, "download module,download to .dav file success!\n");
+		sprintf(buff_temp, "download module,download to .dav file success,download id is :%lld!\n",lPlayHandle);
 		g_Download_logwrite.PrintLog(MyLogger::INFO,"%s",buff_temp);
 		cout <<" else ........."<<endl;
 
@@ -233,7 +241,7 @@ int downLoad::DM_DownLoadByTime(int id,int nAudiNU,int nDevicePo,NET_TIME tmStar
 	{
 		char buff_temp[255] = {'\0'};
 		memset(buff_temp, 0, sizeof(buff_temp));
-		sprintf(buff_temp, "download module,get ipc info failed error id is:%d\n",nRet);
+		sprintf(buff_temp, "download module,download by time,get ipc info failed error id is:%d\n",nRet);
 		g_Download_logwrite.PrintLog(MyLogger::INFO,"%s",buff_temp);
 		return nRet;
 	}
@@ -251,7 +259,7 @@ int downLoad::DM_DownLoadByTime(int id,int nAudiNU,int nDevicePo,NET_TIME tmStar
 		nRet = URL_DOWNLOADCONTROL_DOWNLOADNUM_ERROR;
 		char buff_temp[255] = {'\0'};
 		memset(buff_temp, 0, sizeof(buff_temp));
-		sprintf(buff_temp, "download module,Concurrency download num > 18!\n");
+		sprintf(buff_temp, "download module,download by time,Concurrency download num > 18!\n");
 		g_Download_logwrite.PrintLog(MyLogger::INFO,"%s,error id is:%d",buff_temp,nRet);
 		return nRet;
 	}
@@ -724,7 +732,7 @@ int downLoad::DM_DownLoadByTime(int id,int nAudiNU,int nDevicePo,NET_TIME tmStar
 		g_nvrcontrol.DM_Logout(g_nvrcontrol.m_lLoginHandle);
 		char buff_temp[255] = {'\0'};
 		memset(buff_temp, 0, sizeof(buff_temp));
-		sprintf(buff_temp, "download control,download by time ,use sdk CLIENT_DownloadByTime failed!\n");
+		sprintf(buff_temp, "download control,download by time ,use sdk CLIENT_DownloadByTime failed .mp4 name is :%s!\n",ALLPathMP4);
 		g_Download_logwrite.PrintLog(MyLogger::INFO,"%s,error id is:%d",buff_temp,nRet);
 	}
 	downloadTable.DeleteSpaceDownload(&pDownloadItem);
@@ -1168,6 +1176,47 @@ int downLoad::ZeroSpaceDownloadInfos(DOWNLOAD_INFOS *pDownloadInfos)
 			DOWNLOAD_INFO *ptemp = (DOWNLOAD_INFO *)((*pDownloadInfos)[i]);
 			ZeroSpaceDeviceDownloadInfo(ptemp);
 		}
+	}
+	return nRet;
+}
+
+int downLoad::DM_SetState()
+{
+	int nRet = 0;
+	while(true)
+	{
+		int isping_ok;
+		CFileManager filemanger;
+		filemanger.PingIsOk(g_NvrIP,&isping_ok);
+		if(!isping_ok )
+		{
+			nRet = -1;
+			char buff_temp[255] = {'\0'};
+			memset(buff_temp, 0, sizeof(buff_temp));
+			sprintf(buff_temp, "download module,download by time,ping nvr ip is failed ,this ip can not using!\n");
+			g_Download_logwrite.PrintLog(MyLogger::INFO,"%s,error id is:%d",buff_temp,nRet);
+			DOWNLOAD_INFOS downloadInfos;
+			pthread_mutex_lock(&m_mutex_checking);
+			DM_GetDownLoadInfo(&downloadInfos);
+			pthread_mutex_unlock(&m_mutex_checking);
+			for(DOWNLOAD_INFOS::iterator it = downloadInfos.begin();it != downloadInfos.end();++it)
+			{
+				DOWNLOAD_INFO * pdownloadinfo = (DOWNLOAD_INFO *)(*it);
+				if(!strcmp(pdownloadinfo->pdownloaditem->state,"begin"))
+				{
+					char state[50] = {'\0'};
+					memset(state,0,sizeof(state));
+					sprintf(state,"failed");
+					downloadTable.updateDownloadInfoByDownloadID("state",state,atoll(pdownloadinfo->pdownloaditem->downloadID));
+					char cmd[255] = {'\0'};
+					memset(cmd,0,sizeof(cmd));
+					sprintf(cmd,"rm -rf %s",pdownloadinfo->pdownloaditem->filename);		
+					system(cmd);
+				}
+			}
+			DeleteSpaceDownloadInfos(&downloadInfos);
+		}
+		sleep(30);
 	}
 	return nRet;
 }
