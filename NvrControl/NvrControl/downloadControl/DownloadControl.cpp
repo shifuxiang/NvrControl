@@ -776,6 +776,7 @@ int covertavitomp4(string inputname,string outputname)
     AVPacket pkt;
     const char *in_filename, *out_filename;
     int ret, i;
+	int videoindex = -1;
 
 	in_filename = inputname.c_str();
 	out_filename = outputname.c_str();
@@ -813,30 +814,35 @@ int covertavitomp4(string inputname,string outputname)
     ofmt = ofmt_ctx->oformat;
 
     for (i = 0; i < ifmt_ctx->nb_streams; i++) {
-        AVStream *in_stream = ifmt_ctx->streams[i];
-        AVStream *out_stream = avformat_new_stream(ofmt_ctx, in_stream->codec->codec);
-        if (!out_stream) {
-            fprintf(stderr, "Failed allocating output stream\n");
-			char buff_temp[255] = {'\0'};
-			memset(buff_temp, 0, sizeof(buff_temp));
-			sprintf(buff_temp, "download module,covert avi to mp4 failed,Failed allocating output stream!\n");
-			g_Download_logwrite.PrintLog(MyLogger::INFO,"%s",buff_temp);
-            ret = AVERROR_UNKNOWN;
-            goto end;
-        }
+		if(ifmt_ctx->streams[i]->codec->codec_type == AVMEDIA_TYPE_VIDEO)
+		{
+			videoindex = i;
+			AVStream *in_stream = ifmt_ctx->streams[i];
+			AVStream *out_stream = avformat_new_stream(ofmt_ctx, in_stream->codec->codec);
+			if (!out_stream) {
+				fprintf(stderr, "Failed allocating output stream\n");
+				char buff_temp[255] = {'\0'};
+				memset(buff_temp, 0, sizeof(buff_temp));
+				sprintf(buff_temp, "download module,covert avi to mp4 failed,Failed allocating output stream!\n");
+				g_Download_logwrite.PrintLog(MyLogger::INFO,"%s",buff_temp);
+				ret = AVERROR_UNKNOWN;
+				goto end;
+			}
 
-        ret = avcodec_copy_context(out_stream->codec, in_stream->codec);
-        if (ret < 0) {
-            fprintf(stderr, "Failed to copy context from input to output stream codec context\n");
-			char buff_temp[255] = {'\0'};
-			memset(buff_temp, 0, sizeof(buff_temp));
-			sprintf(buff_temp, "download module,covert avi to mp4 failed,Failed to copy context from input to output stream codec context!\n");
-			g_Download_logwrite.PrintLog(MyLogger::INFO,"%s",buff_temp);
-            goto end;
-        }
-        out_stream->codec->codec_tag = 0;
-        if (ofmt_ctx->oformat->flags & AVFMT_GLOBALHEADER)
-            out_stream->codec->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+			ret = avcodec_copy_context(out_stream->codec, in_stream->codec);
+			if (ret < 0) {
+				fprintf(stderr, "Failed to copy context from input to output stream codec context\n");
+				char buff_temp[255] = {'\0'};
+				memset(buff_temp, 0, sizeof(buff_temp));
+				sprintf(buff_temp, "download module,covert avi to mp4 failed,Failed to copy context from input to output stream codec context!\n");
+				g_Download_logwrite.PrintLog(MyLogger::INFO,"%s",buff_temp);
+				goto end;
+			}
+			out_stream->codec->codec_tag = 0;
+			if (ofmt_ctx->oformat->flags & AVFMT_GLOBALHEADER)
+				out_stream->codec->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+				break;
+		}
     }
     av_dump_format(ofmt_ctx, 0, out_filename, 1);
 
@@ -865,6 +871,11 @@ int covertavitomp4(string inputname,string outputname)
         ret = av_read_frame(ifmt_ctx, &pkt);
         if (ret < 0)
             break;
+		if(pkt.stream_index != videoindex)
+		{
+			av_packet_unref(&pkt);
+			continue;
+		}
 
         in_stream  = ifmt_ctx->streams[pkt.stream_index];
         out_stream = ofmt_ctx->streams[pkt.stream_index];
